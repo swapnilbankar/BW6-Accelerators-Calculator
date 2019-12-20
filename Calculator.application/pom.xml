@@ -14,7 +14,7 @@
     <externalProfileLoc></externalProfileLoc>
     <appSpace>MyAppSpace</appSpace>
     <keystorePath></keystorePath>
-    <profile>default.substvar</profile>
+    <profile>QA.substvar</profile>
     <backup>false</backup>
     <truststorePath></truststorePath>
     <domainDesc></domainDesc>
@@ -29,7 +29,7 @@
     <appSpaceDesc></appSpaceDesc>
     <redeploy>true</redeploy>
     <tibco.Home></tibco.Home>
-    <externalProfile>true</externalProfile>
+    <externalProfile>false</externalProfile>
     <keystorePassword></keystorePassword>
     <backupLocation></backupLocation>
     <agentPassword></agentPassword>
@@ -91,11 +91,35 @@
   <profiles>
     <profile>
       <id>DEFAULT</id>
+      <properties>
+        <profile>default.substvar</profile>
+      </properties>
+    </profile>
+    <profile>
+      <id>Development</id>
+      <properties>
+        <profile>Development.substvar</profile>
+      </properties>
+    </profile>
+    <profile>
+      <id>Production</id>
+      <properties>
+        <profile>Production.substvar</profile>
+      </properties>
+    </profile>
+    <profile>
+      <id>QA</id>
       <activation>
         <activeByDefault>true</activeByDefault>
       </activation>
       <properties>
-        <profile>default.substvar</profile>
+        <profile>QA.substvar</profile>
+      </properties>
+    </profile>
+    <profile>
+      <id>UAT</id>
+      <properties>
+        <profile>UAT.substvar</profile>
       </properties>
     </profile>
   </profiles>

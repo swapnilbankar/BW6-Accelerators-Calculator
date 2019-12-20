@@ -1,0 +1,18 @@
+Manifest-Version: 1.0.0.202001221137
+Bundle-SymbolicName: Calculator
+Bundle-ManifestVersion: 2
+TIBCO-BW-Edition: bwe
+Bundle-Vendor: TIBCO Software Inc.
+TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
+Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",com.tib
+ co.bw.palette; filter:="(name=bw.generalactivities)",com.tibco.bw.sha
+ redresource.model; filter:="(name=bw.httpconnector)",com.tibco.bw.bin
+ ding.model; filter:="(name=bw.soap)"
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-Version: 6.5.0 V63 2018-08-08
+Bundle-Name: Calculator Module
+Bundle-Version: 1.0.0.202001221137
+Bundle-ClassPath: .
+TIBCO-BW-ApplicationModule: META-INF/module.bwm
+TIBCO-BW-JobSharedVariables: META-INF/module.jsv
+

@@ -3,6 +3,7 @@
 	<globalVariables>
 		<globalVariable>
 			<name>HTTPHost</name>
+			<value>localhost</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
@@ -10,6 +11,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>HTTPPort</name>
+			<value>8484</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>
@@ -89,19 +91,19 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//Calculator//HTTPHost</name>
-			<value>localhost</value>
+			<value>%%HTTPHost%%</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Calculator//HTTPPort</name>
-			<value>8082</value>
+			<value>%%HTTPPort%%</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 	</globalVariables>
 </repository>
