@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:extns="http://www.example.org/Calculator" xmlns:tns="http://www.example.org/wsdl/1573560616918" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Calculator" targetNamespace="http://www.example.org/wsdl/1573560616918">
+  <wsdl:import namespace="http://www.example.org/Calculator"/>
+  <wsdl:types>
+    <xsd:schema elementFormDefault="unqualified" targetNamespace="http://www.example.org/wsdl/1573560616918">
+            <xsd:import namespace="http://www.example.org/Calculator" schemaLocation="../Schemas/Calculator.xsd"/>
+            <xsd:element name="additionRequest" type="extns:RequestType">
+      </xsd:element>
+      <xsd:element name="additionResponse" type="extns:ResponseType">
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="additionRequest">
+    <wsdl:part element="tns:additionRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="additionResponse">
+    <wsdl:part element="tns:additionResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="Calculator">
+    <wsdl:operation name="addition">
+      <wsdl:input message="tns:additionRequest" name="additionInput"/>
+      <wsdl:output message="tns:additionResponse" name="additionOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

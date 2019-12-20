@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/Calculator" elementFormDefault="qualified" targetNamespace="http://www.example.org/Calculator">
+    <element name="Request" type="tns:RequestType"/>
+    <element name="Response" type="tns:ResponseType"/>
+    <element name="Number1" type="int"/>
+    <element name="Number2" type="int"/>
+    <complexType name="RequestType">
+    	<sequence>
+    		<element ref="tns:Number1"/>
+    		<element ref="tns:Number2"/>
+    	</sequence>
+    </complexType>    
+    <complexType name="ResponseType">
+    	<sequence>
+    		<element ref="tns:Result"/>
+    	</sequence>
+    </complexType>    
+    <element name="Result" type="int"/>
+</schema>

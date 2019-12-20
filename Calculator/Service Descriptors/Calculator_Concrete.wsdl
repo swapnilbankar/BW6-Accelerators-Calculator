@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/wsdl/1573560616919" xmlns:tns0="http://www.example.org/wsdl/1573560616918" xmlns:tns1="http://www.example.org/Calculator" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Calculator" targetNamespace="http://www.example.org/wsdl/1573560616919">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.example.org/wsdl/1573560616918" xmlns:extns="http://www.example.org/Calculator" elementFormDefault="unqualified" targetNamespace="http://www.example.org/wsdl/1573560616918">
+      <xsd:import namespace="http://www.example.org/Calculator"/>
+      <xsd:element name="additionRequest" type="extns:RequestType"/>
+      <xsd:element name="additionResponse" type="extns:ResponseType"/>
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://www.example.org/Calculator" elementFormDefault="qualified" targetNamespace="http://www.example.org/Calculator">
+      <xsd:element name="Request" type="tns:RequestType"/>
+      <xsd:element name="Response" type="tns:ResponseType"/>
+      <xsd:element name="Number1" type="xsd:int"/>
+      <xsd:element name="Number2" type="xsd:int"/>
+      <xsd:complexType name="RequestType">
+        <xsd:sequence>
+          <xsd:element ref="tns:Number1"/>
+          <xsd:element ref="tns:Number2"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ResponseType">
+        <xsd:sequence>
+          <xsd:element ref="tns:Result"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Result" type="xsd:int"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="additionRequest">
+    <wsdl:part element="tns0:additionRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="additionResponse">
+    <wsdl:part element="tns0:additionResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="Calculator">
+    <wsdl:operation name="addition">
+      <wsdl:input message="tns:additionRequest" name="additionInput"/>
+      <wsdl:output message="tns:additionResponse" name="additionOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOAPServiceBinding" type="tns:Calculator">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="addition">
+      <soap:operation soapAction="addition" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Calculator">
+    <wsdl:port binding="tns:SOAPServiceBinding" name="CalculatorSOAP">
+      <soap:address location="http://localhost:8082/SOAPServiceBinding/calculator/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
